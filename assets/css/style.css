@@ -5,5 +5,20 @@
 }
 
 body {
-  background-color: yellow;
+  background-color: rgb(26, 26, 26);
+}
+
+
+.top-left-triangle, .bottom-right-triangle {
+  height: 5vh;
+}
+
+.top-left-triangle {
+  clip-path: polygon(100% 0, 0 0, 0 100%);
+  background-color: pink;
+}
+
+.bottom-right-triangle {
+  background-color: red;
+  clip-path: polygon(100% 0, 0% 100%, 100% 100%);
 }
