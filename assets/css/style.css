@@ -2,8 +2,13 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-size: 16px;
+  font-family: 'Roboto', sans-serif;
 }
 
+html {
+  font-size: 62.5%;
+}
 body {
   background-color: rgb(26, 26, 26);
 }
@@ -14,11 +19,39 @@ body {
 }
 
 .top-left-triangle {
-  clip-path: polygon(100% 0, 0 0, 0 100%);
-  background-color: pink;
+  clip-path: polygon(0 0 , 100% 0, 0 100%);
+  background-image: linear-gradient(to right, rgb(93,226,244), rgb(244,244,48));
 }
 
 .bottom-right-triangle {
-  background-color: red;
-  clip-path: polygon(100% 0, 0% 100%, 100% 100%);
+  clip-path: polygon(100% 0, 100% 100%, 0 100%);
+  background-color: rgb(182, 17, 17);
+  margin-top: -5vh;
+}
+
+.title {
+  width: 33%;
+  position: absolute;
+  top: 1rem;
+  left: 16.66%;
+}
+
+.title .black-bg {
+  background-color: black;
+  clip-path: polygon(5% 0, 95% 0, 100% 50%, 95% 100%, 5% 100%, 0 50%);
+  height: 10vh;
+}
+
+.title .yellow-bg {
+  background-color:rgb(211, 211, 6);
+  clip-path: polygon(5% 0, 95% 0, 100% 50%, 95% 100%, 5% 100%, 0 50%);
+  height: 8.8vh;
+  width: 95%;
+  transform: translateX(1.2rem) translateY(.3rem);
+}
+
+.title .title-text {
+  text-align: center;
+  line-height: 8.8vh;
+  font-size: 3rem;
 }
