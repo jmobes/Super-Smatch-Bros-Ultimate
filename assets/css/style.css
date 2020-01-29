@@ -55,3 +55,22 @@ body {
   line-height: 8.8vh;
   font-size: 3rem;
 }
+
+.card-container {
+  display: flex;
+  width: 80%;
+  height: 50vh;
+}
+
+.card {
+  flex-wrap: wrap;
+  width: 100px;
+  height: 100px;
+  border: 3px solid red;
+}
+
+.card .back {
+  background-position: center;
+  width: 100px;
+  height: 100px;
+}
