@@ -10,6 +10,12 @@ html {
   font-size: 62.5%;
 }
 body {
+  background-color: white;
+}
+
+.game-container {
+  width: 90%;
+  margin: 0 auto;
   background-color: rgb(20, 22, 26);
 }
 
@@ -69,8 +75,8 @@ body {
 .card {
   width: calc(12.5%);
   height: calc(33.33%);
-  text-align: center;
   position: relative;
+  box-shadow: 5px 5px 20px;
 }
 
 .card:not(.last-col) {
@@ -106,7 +112,7 @@ body {
   clip-path: polygon(10% 0, 100% 0, 100% 100%, 0 100%, 0 20%);
   background-color: black;
   margin-top: 1rem;
-  height: 110%;
+  height: 100%;
   width: 49%;
 }
 
