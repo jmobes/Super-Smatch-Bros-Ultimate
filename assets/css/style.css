@@ -58,19 +58,29 @@ body {
 
 .card-container {
   display: flex;
+  flex-wrap: wrap;
   width: 80%;
-  height: 50vh;
+  height: 45vh;
+  margin: 5rem auto;
+  background-image: linear-gradient(to bottom right, rgb(106, 195, 230), rgb(244,244,48));
 }
 
 .card {
-  flex-wrap: wrap;
-  width: 100px;
-  height: 100px;
-  border: 3px solid red;
+  width: calc(12.5%);
+  height: calc(33.33%);
+  text-align: center;
+}
+
+.card:not(.last-col) {
+  border-right: 1px solid black;
+}
+
+.card:not(.last-row) {
+  border-bottom: 1px solid black;
 }
 
 .card .back {
   background-position: center;
-  width: 100px;
-  height: 100px;
+  width: 80%;
+  height: 80%;
 }
