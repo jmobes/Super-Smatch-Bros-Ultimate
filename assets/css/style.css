@@ -90,6 +90,7 @@ body {
 
 .card .back, .card .front {
   background-position: center;
+
 }
 
 .card .back {
@@ -109,9 +110,9 @@ body {
   left: 0;
 }
 
-.front {
+/* .front {
   visibility: hidden;
-}
+} */
 
 .footer-container {
   margin-top: 2rem;
