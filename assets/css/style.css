@@ -110,9 +110,9 @@ body {
   left: 0;
 }
 
-.front {
+/* .front {
   visibility: hidden;
-}
+} */
 
 .footer-container {
   margin-top: 2rem;
@@ -135,6 +135,7 @@ body {
   height: 100%;
   width: 99%;
   margin: .5rem 0 0 .33rem;
+  position: relative;
 }
 
 .img-container {
@@ -162,4 +163,18 @@ body {
 
 .second {
   background-color: rgb(52,119,254);
+}
+
+.character-info-container {
+  position: absolute;
+  top: 0;
+  right: 0;
+  background-color: pink;
+  width: 45%;
+  height: 100%;
+}
+
+.character-logo {
+  height: 10%;
+  width: 10%;
 }
