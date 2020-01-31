@@ -169,12 +169,50 @@ body {
   position: absolute;
   top: 0;
   right: 0;
-  background-color: pink;
   width: 45%;
   height: 100%;
 }
 
 .character-logo {
-  height: 10%;
-  width: 10%;
+  opacity: .5;
+  position: absolute;
+  top: 0;
+  right: 1rem;
+  height: 50%;
+  width: 50%;
+}
+
+.character-text-container {
+  position: absolute;
+  top: 25%;
+  right: 15%;
+}
+
+.character-text {
+  font-size: 3rem;
+  color: #fff;
+  text-shadow: 2.5px 2.5px 0 #000, -.8px -.8px #000;
+}
+
+.card-text-container {
+  position: absolute;
+  top: 60%;
+  right: 20%;
+  border: 3px solid black;
+  width: 70%;
+  padding: .5rem;
+}
+
+.card-text-container.red {
+  background-color: rgb(255, 136, 136);
+}
+
+.card-text-container.blue {
+  background-color: rgb(107, 155, 252);
+}
+
+.card-text {
+  font-size: 2rem;
+  text-align: center;
+  font-weight: bold;
 }
