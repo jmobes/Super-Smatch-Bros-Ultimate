@@ -39,7 +39,7 @@ body {
   width: 33%;
   position: absolute;
   top: 1rem;
-  left: 16.66%;
+  left: 25%;
 }
 
 .title .black-bg {
@@ -116,7 +116,7 @@ body {
 
 .footer-container {
   margin-top: 2rem;
-  height: 35vh;
+  height: 38.5vh;
   background-image: linear-gradient(to right, rgb(33,74,165), rgb(100,222,241));
   display: flex;
   justify-content: space-around;
@@ -126,13 +126,13 @@ body {
   clip-path: polygon(10% 0, 100% 0, 100% 100%, 0 100%, 0 20%);
   background-color: black;
   margin-top: 1rem;
-  height: 95%;
+  height: 96%;
   width: 49%;
 }
 
 .footer-card {
-  clip-path: polygon(11% 0, 100% 0, 100% 100%, 0 100%, 0 21%);
-  height: 100%;
+  clip-path: polygon(11% 0, 100% 0, 100% 100%, 0 100%, 0 22%);
+  height: 97%;
   width: 99%;
   margin: .5rem 0 0 .33rem;
   position: relative;
@@ -145,11 +145,13 @@ body {
 }
 
 .portrait-one {
-  background-color: rgb(147,178,217);
+  /* background-color: rgb(147,178,217); */
+  background-color: #fff;
 }
 
 .portrait-two {
-  background-color: rgb(168,225,241);
+  /* background-color: rgb(168,225,241); */
+  background-color: #fff;
 }
 
 .character-portrait {
@@ -176,7 +178,7 @@ body {
 .character-logo {
   opacity: .5;
   position: absolute;
-  top: 0;
+  top: 1rem;
   right: 1rem;
   height: 50%;
   width: 50%;
@@ -184,7 +186,7 @@ body {
 
 .character-text-container {
   position: absolute;
-  top: 25%;
+  top: 30%;
   right: 15%;
 }
 
