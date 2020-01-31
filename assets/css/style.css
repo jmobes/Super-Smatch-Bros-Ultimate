@@ -110,9 +110,9 @@ body {
   left: 0;
 }
 
-/* .front {
+.front {
   visibility: hidden;
-} */
+}
 
 .footer-container {
   margin-top: 2rem;
@@ -146,12 +146,12 @@ body {
 
 .portrait-one {
   /* background-color: rgb(147,178,217); */
-  background-color: #fff;
+  background-color: rgb(206, 204, 204);
 }
 
 .portrait-two {
   /* background-color: rgb(168,225,241); */
-  background-color: #fff;
+  background-color: rgb(206, 204, 204);
 }
 
 .character-portrait {

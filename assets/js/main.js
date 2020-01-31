@@ -1,3 +1,12 @@
 document.addEventListener("DOMContentLoaded", function() {
-  console.log("connected");
-})
+
+  const cards = document.querySelectorAll(".card");
+  cards.forEach(card => {
+    card.addEventListener("click", flipCard);
+  });
+
+  function flipCard() {
+    console.log(event.target);
+  }
+
+});
