@@ -69,28 +69,32 @@ body {
   width: 80%;
   height: 45vh;
   margin: 6rem auto 0 auto;
-  background-image: linear-gradient(to bottom right, rgb(149,219,255), rgb(255,231,42));
+  justify-content: space-between;
+  perspective: 1000px;
 }
 
 .card {
-  width: calc(12.5%);
-  height: calc(33.33%);
+  width: 12.5%;
+  height: 33.33%;
   position: relative;
+  border: 1px solid black;
+  border-radius: 10px;
   box-shadow: 5px 5px 20px;
-
+  background-color: rgb(230,245,153);
+  backface-visibility: hidden;
+  cursor: pointer;
+  transform-style: preserve-3d;
+  transition: transform .5s;
 }
 
-.card:not(.last-col) {
-  border-right: 1px solid black;
-}
-
-.card:not(.last-row) {
-  border-bottom: 1px solid black;
+.card:active {
+  transform: scale(.98);
+  transition: transform .3s;
 }
 
 .card .back, .card .front {
   background-position: center;
-
+  backface-visibility: hidden;
 }
 
 .card .back {
@@ -100,6 +104,7 @@ body {
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);
+
 }
 
 .card .front {
@@ -108,11 +113,12 @@ body {
   position: absolute;
   top: 0;
   left: 0;
+  border: 1px solid black;
+  border-radius: 10px;
+  box-shadow: 5px 5px 20px;
+  background-color: rgb(230,245,153);
+  transform: rotateY(180deg);
 }
-
-/* .front {
-  visibility: hidden;
-} */
 
 .footer-container {
   margin-top: 2rem;
@@ -145,13 +151,11 @@ body {
 }
 
 .portrait-one {
-  /* background-color: rgb(147,178,217); */
-  background-color: #fff;
+  background-color: rgb(206, 204, 204);
 }
 
 .portrait-two {
-  /* background-color: rgb(168,225,241); */
-  background-color: #fff;
+  background-color: rgb(206, 204, 204);
 }
 
 .character-portrait {
@@ -217,4 +221,9 @@ body {
   font-size: 2rem;
   text-align: center;
   font-weight: bold;
+}
+
+.card.flip {
+  transform: rotateY(180deg);
+  transition: transform .2s;
 }
