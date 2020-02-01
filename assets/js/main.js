@@ -6,7 +6,8 @@ document.addEventListener("DOMContentLoaded", function() {
   });
 
   function flipCard() {
-    console.log(event.target);
+    console.log(this);
+    this.classList.toggle("");
   }
 
 });
