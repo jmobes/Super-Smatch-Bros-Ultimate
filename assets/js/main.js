@@ -6,8 +6,10 @@ document.addEventListener("DOMContentLoaded", function() {
   });
 
   function flipCard() {
-    console.log(this);
-    this.classList.toggle("");
+    const back = this.children[0];
+    const front = this.children[1];
+    back.classList.toggle("invisible");
+    front.classList.toggle("visible");
   }
 
 });
