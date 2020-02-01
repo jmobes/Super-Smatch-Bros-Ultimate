@@ -70,6 +70,7 @@ body {
   height: 45vh;
   margin: 6rem auto 0 auto;
   justify-content: space-between;
+  perspective: 1000px;
 }
 
 .card {
@@ -82,6 +83,7 @@ body {
   background-color: rgb(230,245,153);
   backface-visibility: hidden;
   cursor: pointer;
+  transform-style: preserve-3d;
 }
 
 .card:active {
@@ -108,15 +110,6 @@ body {
   position: absolute;
   top: 0;
   left: 0;
-}
-
-.invisible {
-  opacity: 0;
-}
-
-.visible {
-  opacity: 1;
-  transition: opacity 1.5s;
 }
 
 .footer-container {
@@ -224,6 +217,16 @@ body {
   font-weight: bold;
 }
 
-.flip {
-  visibility: hidden;
+.invisible {
+  opacity: 0;
+  transition: opacity 1.5s;
+}
+
+.visible {
+  opacity: 1;
+  transition: opacity 1.5s;
+}
+
+.card.flip {
+  transform: rotateY(180deg);
 }
