@@ -12,8 +12,8 @@ document.addEventListener("DOMContentLoaded", function() {
   });
 
   function flipCard() {
-    let back = this.children[0];
-    let front = this.children[1];
+
+    this.classList.toggle("flip");
 
     if (locked) {
       return;
@@ -22,9 +22,6 @@ document.addEventListener("DOMContentLoaded", function() {
     if(this === firstCard) {
       return;
     }
-
-    back.classList.toggle("invisible");
-    front.classList.toggle("visible");
 
     if(!flipped) {
       flipped = true;
@@ -51,10 +48,8 @@ document.addEventListener("DOMContentLoaded", function() {
   function unflip() {
     locked = true;
     setTimeout(() => {
-      firstCard.children[0].classList.toggle("invisible");
-      firstCard.children[1].classList.toggle("visible");
-      secondCard.children[0].classList.toggle("invisible");
-      secondCard.children[1].classList.toggle("visible");
+      firstCard.classList.toggle("flip");
+      secondCard.classList.toggle("flip");
 
       resetBoard();
     }, 1500);

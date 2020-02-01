@@ -84,15 +84,17 @@ body {
   backface-visibility: hidden;
   cursor: pointer;
   transform-style: preserve-3d;
+  transition: transform .5s;
 }
 
 .card:active {
   transform: scale(.98);
+  transition: transform .3s;
 }
 
 .card .back, .card .front {
   background-position: center;
-
+  backface-visibility: hidden;
 }
 
 .card .back {
@@ -102,6 +104,7 @@ body {
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);
+
 }
 
 .card .front {
@@ -110,6 +113,11 @@ body {
   position: absolute;
   top: 0;
   left: 0;
+  border: 1px solid black;
+  border-radius: 10px;
+  box-shadow: 5px 5px 20px;
+  background-color: rgb(230,245,153);
+  transform: rotateY(180deg);
 }
 
 .footer-container {
@@ -143,12 +151,10 @@ body {
 }
 
 .portrait-one {
-  /* background-color: rgb(147,178,217); */
   background-color: rgb(206, 204, 204);
 }
 
 .portrait-two {
-  /* background-color: rgb(168,225,241); */
   background-color: rgb(206, 204, 204);
 }
 
@@ -217,16 +223,7 @@ body {
   font-weight: bold;
 }
 
-.invisible {
-  opacity: 0;
-  transition: opacity 1.5s;
-}
-
-.visible {
-  opacity: 1;
-  transition: opacity 1.5s;
-}
-
 .card.flip {
   transform: rotateY(180deg);
+  transition: transform .2s;
 }
