@@ -6,6 +6,13 @@ document.addEventListener("DOMContentLoaded", function() {
   let locked = false;
   let match = 0;
 
+  const firstCardBigImage = document.querySelector(".first-pick-character");
+  const secondCardBigImage = document.querySelector(".second-pick-character");
+  const firstCardLogo = document.querySelector(".first-pick-logo");
+  const secondCardLogo = document.querySelector(".second-pick-logo");
+  const firstCardText = document.querySelector(".first-card-text");
+  const secondCardText = document.querySelector(".second-card-text");
+
   const cards = document.querySelectorAll(".card");
   cards.forEach(card => {
     card.addEventListener("click", flipCard);
@@ -27,11 +34,18 @@ document.addEventListener("DOMContentLoaded", function() {
     if(!flipped) {
       flipped = true;
       firstCard = this;
+      firstCardBigImage.src = "assets/images/" + firstCard.dataset.framework + "-card.png";
+      firstCardLogo.src = "assets/images/" + firstCard.dataset.framework + "-logo.png";
+      firstCardText.innerText = firstCard.dataset.framework;
+
       return;
     }
 
     flipped = false;
     secondCard = this;
+    secondCardBigImage.src = "assets/images/" + secondCard.dataset.framework + "-card.png";
+    secondCardLogo.src = "assets/images/" + secondCard.dataset.framework + "-logo.png";
+    secondCardText.innerText = secondCard.dataset.framework;
     checkMatch();
   }
 
