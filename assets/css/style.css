@@ -17,6 +17,7 @@ body {
   width: 70%;
   margin: 0 auto;
   background-color: rgb(20, 22, 26);
+  position: relative;
 }
 
 
@@ -79,7 +80,7 @@ body {
   position: relative;
   border: 1px solid black;
   border-radius: 10px;
-  box-shadow: 5px 5px 20px;
+  /* box-shadow: 5px 5px 20px; */
   background-color: rgb(230,245,153);
   backface-visibility: hidden;
   cursor: pointer;
@@ -114,7 +115,7 @@ body {
   top: 0;
   left: 0;
   border-radius: 10px;
-  box-shadow: 5px 5px 20px;
+  /* box-shadow: 5px 5px 20px; */
   background-color: rgb(230,245,153);
   transform: rotateY(180deg);
   cursor: pointer;
@@ -227,4 +228,50 @@ body {
 .card.flip {
   transform: rotateY(180deg);
   transition: transform .2s;
+}
+
+.modal-container {
+  position: absolute;
+  top: 5%;
+  left: 0;
+  width: 100%;
+  height: 50vh;
+  margin: 0 auto;
+  background-color: #fff;
+  z-index: 1;
+  clip-path: polygon(0 50%, 100% 10%, 100% 100%, 0 100%);
+  opacity: .95;
+  display: none;
+}
+
+.modal-bg-1 {
+  position: absolute;
+  top: 20%;
+  left: 0;
+  height: 70%;
+  width: 100%;
+  background-image: linear-gradient(to right, rgb(233,0,0), rgb(235,200,5));
+  clip-path: polygon(0 50%, 100% 5%, 100% 95%, 0 100%);
+}
+
+.modal-bg-2 {
+  position: absolute;
+  top: 18%;
+  left: 10%;
+  height: 70%;
+  width: 85%;
+  background-color: #000;
+  clip-path: polygon(7% 40%, 100% 5%, 95% 90%, 0 100%);
+  text-align: center;
+}
+
+.win {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%) skewY(-6deg);
+  font-size: 9rem;
+  background-image: linear-gradient(to right, yellow, orange);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
