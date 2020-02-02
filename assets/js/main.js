@@ -13,15 +13,16 @@ document.addEventListener("DOMContentLoaded", function() {
 
   function flipCard() {
 
-    this.classList.toggle("flip");
-
     if (locked) {
       return;
     }
 
-    if(this === firstCard) {
+    if (this === firstCard) {
+      console.log("cant click on same card");
       return;
     }
+
+    this.classList.toggle("flip");
 
     if(!flipped) {
       flipped = true;
@@ -46,6 +47,7 @@ document.addEventListener("DOMContentLoaded", function() {
   }
 
   function unflip() {
+    console.log("NO MATCH");
     locked = true;
     setTimeout(() => {
       firstCard.classList.toggle("flip");
