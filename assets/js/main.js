@@ -34,18 +34,14 @@ document.addEventListener("DOMContentLoaded", function() {
     if(!flipped) {
       flipped = true;
       firstCard = this;
-      firstCardBigImage.src = "assets/images/" + firstCard.dataset.framework + "-card.png";
-      firstCardLogo.src = "assets/images/" + firstCard.dataset.framework + "-logo.png";
-      firstCardText.innerText = firstCard.dataset.framework;
+      getImages();
 
       return;
     }
 
     flipped = false;
     secondCard = this;
-    secondCardBigImage.src = "assets/images/" + secondCard.dataset.framework + "-card.png";
-    secondCardLogo.src = "assets/images/" + secondCard.dataset.framework + "-logo.png";
-    secondCardText.innerText = secondCard.dataset.framework;
+    getImages();
     checkMatch();
   }
 
@@ -56,8 +52,12 @@ document.addEventListener("DOMContentLoaded", function() {
 
   function removeClick() {
     console.log("ITS A MATCH");
-    firstCard.removeEventListener("click", flipCard);
-    secondCard.removeEventListener("click", flipCard);
+    setTimeout(() => {
+      firstCard.removeEventListener("click", flipCard);
+      secondCard.removeEventListener("click", flipCard);
+      resetBoard();
+      resetImages();
+    },1500);
   }
 
   function unflip() {
@@ -66,8 +66,8 @@ document.addEventListener("DOMContentLoaded", function() {
     setTimeout(() => {
       firstCard.classList.toggle("flip");
       secondCard.classList.toggle("flip");
-
       resetBoard();
+      resetImages();
     }, 1500);
   }
 
@@ -76,6 +76,45 @@ document.addEventListener("DOMContentLoaded", function() {
     locked = false;
     firstCard = null;
     secondCard = null;
+  }
+
+  function getImages() {
+    firstCardBigImage.src = "assets/images/" + firstCard.dataset.framework + "-card.png";
+    if (firstCard.dataset.framework === "jigglypuff" || firstCard.dataset.framework === "pikachu") {
+      firstCardLogo.src = "assets/images/pokemon-logo.png";
+    }
+    else if (firstCard.dataset.framework === "mario" || firstCard.dataset.framework === "luigi") {
+      firstCardLogo.src = "assets/images/mario-bros-logo.png";
+    }
+    else {
+      firstCardLogo.src = "assets/images/" + firstCard.dataset.framework + "-logo.png";
+      firstCardText.innerText = firstCard.dataset.framework;
+    }
+    if(secondCard === null) {
+      return;
+    }
+    else {
+      secondCardBigImage.src = "assets/images/" + secondCard.dataset.framework + "-card.png";
+      if (secondCard.dataset.framework === "jigglypuff" || secondCard.dataset.framework === "pikachu") {
+        secondCardLogo.src = "assets/images/pokemon-logo.png";
+      }
+      else if (secondCard.dataset.framework === "mario" || secondCard.dataset.framework === "luigi") {
+        secondCardLogo.src = "assets/images/mario-bros-logo.png";
+      }
+      else {
+        secondCardLogo.src = "assets/images/" + secondCard.dataset.framework + "-logo.png";
+        secondCardText.innerText = secondCard.dataset.framework;
+      }
+    }
+  }
+
+  function resetImages() {
+    firstCardBigImage.src = "assets/images/random.png";
+    firstCardLogo.src = "assets/images/smash-icon.png";
+    firstCardText.innerText = "Character";
+    secondCardBigImage.src = "assets/images/random.png";
+    secondCardLogo.src = "assets/images/smash-icon.png";
+    secondCardText.innerText = "Character";
   }
 
 });
