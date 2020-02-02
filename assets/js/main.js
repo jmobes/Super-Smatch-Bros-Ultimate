@@ -18,6 +18,8 @@ document.addEventListener("DOMContentLoaded", function() {
     card.addEventListener("click", flipCard);
   });
 
+  shuffleCards();
+
   function flipCard() {
 
     if (locked) {
@@ -51,17 +53,20 @@ document.addEventListener("DOMContentLoaded", function() {
   }
 
   function removeClick() {
-    console.log("ITS A MATCH");
+    match++;
+    locked = true;
     setTimeout(() => {
       firstCard.removeEventListener("click", flipCard);
       secondCard.removeEventListener("click", flipCard);
       resetBoard();
       resetImages();
-    },1500);
+    },1000);
+    if(match === 12) {
+      document.querySelector(".modal-container").style.display = "block";
+    }
   }
 
   function unflip() {
-    console.log("NO MATCH");
     locked = true;
     setTimeout(() => {
       firstCard.classList.toggle("flip");
@@ -88,8 +93,10 @@ document.addEventListener("DOMContentLoaded", function() {
     }
     else {
       firstCardLogo.src = "assets/images/" + firstCard.dataset.framework + "-logo.png";
-      firstCardText.innerText = firstCard.dataset.framework;
     }
+    firstCardText.innerText = firstCard.dataset.framework;
+    firstCardText.style.textTransform = "capitalize";
+
     if(secondCard === null) {
       return;
     }
@@ -103,18 +110,26 @@ document.addEventListener("DOMContentLoaded", function() {
       }
       else {
         secondCardLogo.src = "assets/images/" + secondCard.dataset.framework + "-logo.png";
-        secondCardText.innerText = secondCard.dataset.framework;
       }
+      secondCardText.innerText = secondCard.dataset.framework;
+      secondCardText.style.textTransform = "capitalize";
     }
   }
 
   function resetImages() {
     firstCardBigImage.src = "assets/images/random.png";
     firstCardLogo.src = "assets/images/smash-icon.png";
-    firstCardText.innerText = "Character";
+    firstCardText.innerText = "Fighter";
     secondCardBigImage.src = "assets/images/random.png";
     secondCardLogo.src = "assets/images/smash-icon.png";
-    secondCardText.innerText = "Character";
+    secondCardText.innerText = "Fighter";
+  }
+
+  function shuffleCards() {
+    cards.forEach(card=>{
+      let randomPosition = Math.floor(Math.random()*24);
+      card.style.order = randomPosition;
+    })
   }
 
 });
