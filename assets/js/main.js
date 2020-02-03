@@ -1,14 +1,4 @@
 document.addEventListener("DOMContentLoaded", function() {
-  const winCondition = 12;
-
-  let firstCard = null;
-  let secondCard = null;
-  let flipped = false;
-  let locked = false;
-  let match = 0;
-
-  let characterSound = new Audio();
-  let musicOn = false;
 
   const firstCardBigImage = document.querySelector(".first-pick-character");
   const secondCardBigImage = document.querySelector(".second-pick-character");
@@ -16,10 +6,19 @@ document.addEventListener("DOMContentLoaded", function() {
   const secondCardLogo = document.querySelector(".second-pick-logo");
   const firstCardText = document.querySelector(".first-card-text");
   const secondCardText = document.querySelector(".second-card-text");
+  const winCondition = 12;
+
+  let firstCard = null;
+  let secondCard = null;
+  let flipped = false;
+  let locked = false;
+  let match = 0;
+  let characterSound = new Audio();
+  let musicOn = false;
+
 
   const soundBtn = document.querySelector(".sound");
   soundBtn.addEventListener("click", toggleMusic);
-
 
   const cards = document.querySelectorAll(".card");
   cards.forEach(card => {
@@ -71,7 +70,9 @@ document.addEventListener("DOMContentLoaded", function() {
       resetImages();
     },1000);
     if(match === winCondition) {
-      displayModal();
+      setTimeout(()=> {
+        displayModal();
+      },1000);
     }
   }
 
@@ -94,55 +95,46 @@ document.addEventListener("DOMContentLoaded", function() {
 
   function getImages() {
 
-    if(firstCardBigImage.src && flipped) {
+    if(flipped) {
       firstCardBigImage.src = "assets/images/" + firstCard.dataset.framework + "-card.png";
-
-      if (firstCard.dataset.framework === "jigglypuff" || firstCard.dataset.framework === "pikachu") {
-        firstCardLogo.src = "assets/images/pokemon-logo.png";
-      }
-      else if (firstCard.dataset.framework === "mario" || firstCard.dataset.framework === "luigi") {
-        firstCardLogo.src = "assets/images/mario-bros-logo.png";
-      }
-      else {
-        firstCardLogo.src = "assets/images/" + firstCard.dataset.framework + "-logo.png";
-      }
-
-      if (firstCard.dataset.framework === "falcon") {
-        firstCardText.innerText = "C. Falcon";
-      }
-      else if (firstCard.dataset.framework === "dK") {
-        firstCardText.innerText = "Donkey Kong";
-      }
-      else {
-        firstCardText.innerText = firstCard.dataset.framework;
-      }
-
-      firstCardText.style.textTransform = "capitalize";
-
+      switchImage(firstCard,firstCardLogo,firstCardText);
       return;
     }
-
     secondCardBigImage.src = "assets/images/" + secondCard.dataset.framework + "-card.png";
+    switchImage(secondCard,secondCardLogo,secondCardText);
+  }
 
-    if (secondCard.dataset.framework === "jigglypuff" || secondCard.dataset.framework === "pikachu") {
-      secondCardLogo.src = "assets/images/pokemon-logo.png";
+  function switchImage(character,logo,text) {
+    switch(character.dataset.framework) {
+      case "jigglypuff":
+        logo.src = "assets/images/pokemon-logo.png";
+        text.innerText = "Jigglypuff";
+        break;
+      case "pikachu":
+        logo.src = "assets/images/pokemon-logo.png";
+        text.innerText = "Pikachu";
+        break;
+      case "mario":
+        logo.src = "assets/images/mario-bros-logo.png";
+        text.innerText = "Mario";
+        break;
+      case "luigi":
+        logo.src = "assets/images/mario-bros-logo.png";
+        text.innerText = "Luigi";
+        break;
+      case "falcon":
+        logo.src = "assets/images/falcon-logo.png";
+        text.innerText = "C. Falcon";
+        return;
+      case "dK":
+        logo.src = "assets/images/dk-logo.png";
+        text.innerText = "Donkey Kong";
+        break;
+      default:
+        logo.src = "assets/images/" + character.dataset.framework + "-logo.png";
+        text.innerText = character.dataset.framework;
+        text.style.textTransform = "capitalize";
     }
-    else if (secondCard.dataset.framework === "mario" || secondCard.dataset.framework === "luigi") {
-      secondCardLogo.src = "assets/images/mario-bros-logo.png";
-    }
-    else {
-      secondCardLogo.src = "assets/images/" + secondCard.dataset.framework + "-logo.png";
-    }
-    if (secondCard.dataset.framework === "falcon") {
-      secondCardText.innerText = "C. Falcon";
-    }
-    else if (secondCard.dataset.framework === "dK") {
-      secondCardText.innerText = "Donkey Kong";
-    }
-    else {
-      secondCardText.innerText = secondCard.dataset.framework;
-    }
-    secondCardText.style.textTransform = "capitalize";
   }
 
   function resetImages() {
@@ -216,6 +208,11 @@ document.addEventListener("DOMContentLoaded", function() {
 
   function displayModal() {
     document.querySelector(".modal-container").style.display = "block";
+
+    if(musicOn) {
+      characterSound.src = "assets/audio/congrats.wav";
+      characterSound.play();
+    }
   }
 
   function toggleMusic() {
