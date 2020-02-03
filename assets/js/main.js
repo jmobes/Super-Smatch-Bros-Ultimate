@@ -1,10 +1,14 @@
 document.addEventListener("DOMContentLoaded", function() {
+  const winCondition = 12;
 
   let firstCard = null;
   let secondCard = null;
   let flipped = false;
   let locked = false;
   let match = 0;
+
+  let characterSound = new Audio();
+  let musicOn = false;
 
   const firstCardBigImage = document.querySelector(".first-pick-character");
   const secondCardBigImage = document.querySelector(".second-pick-character");
@@ -13,11 +17,9 @@ document.addEventListener("DOMContentLoaded", function() {
   const firstCardText = document.querySelector(".first-card-text");
   const secondCardText = document.querySelector(".second-card-text");
 
-  const themeMusic = document.querySelector(".theme-music");
   const soundBtn = document.querySelector(".sound");
   soundBtn.addEventListener("click", toggleMusic);
 
-  let characterSound = new Audio();
 
   const cards = document.querySelectorAll(".card");
   cards.forEach(card => {
@@ -44,7 +46,6 @@ document.addEventListener("DOMContentLoaded", function() {
       firstCard = this;
       getImages();
       playSound();
-
       return;
     }
 
@@ -69,7 +70,7 @@ document.addEventListener("DOMContentLoaded", function() {
       resetBoard();
       resetImages();
     },1000);
-    if(match === 12) {
+    if(match === winCondition) {
       displayModal();
     }
   }
@@ -161,86 +162,56 @@ document.addEventListener("DOMContentLoaded", function() {
   }
 
   function playSound() {
+    if(!musicOn) {
+      return;
+    }
+
     if(flipped) {
-      switch (firstCard.dataset.framework) {
-        case "mario":
-          characterSound.src = "assets/audio/mario.wav";
-          break;
-        case "dK":
-          characterSound.src = "assets/audio/dK.wav";
-          break;
-        case "link":
-          characterSound.src = "assets/audio/link.wav";
-          break;
-        case "samus":
-          characterSound.src = "assets/audio/samus.wav";
-          break;
-        case "yoshi":
-          characterSound.src = "assets/audio/yoshi.wav";
-          break;
-        case "kirby":
-          characterSound.src = "assets/audio/kirby.wav";
-          break;
-        case "fox":
-          characterSound.src = "assets/audio/fox.wav";
-          break;
-        case "pikachu":
-          characterSound.src = "assets/audio/pikachu.wav";
-          break;
-        case "luigi":
-          characterSound.src = "assets/audio/luigi.wav";
-          break;
-        case "ness":
-          characterSound.src = "assets/audio/ness.wav";
-          break;
-        case "falcon":
-          characterSound.src = "assets/audio/falcon.wav";
-          break;
-        case "jigglypuff":
-          characterSound.src = "assets/audio/jigglypuff.wav";
-      }
-      characterSound.play();
+      switchSound(firstCard);
+      return;
     }
-    else {
-      switch (secondCard.dataset.framework) {
-        case "mario":
-          characterSound.src = "assets/audio/mario.wav";
-          break;
-        case "dK":
-          characterSound.src = "assets/audio/dK.wav";
-          break;
-        case "link":
-          characterSound.src = "assets/audio/link.wav";
-          break;
-        case "samus":
-          characterSound.src = "assets/audio/samus.wav";
-          break;
-        case "yoshi":
-          characterSound.src = "assets/audio/yoshi.wav";
-          break;
-        case "kirby":
-          characterSound.src = "assets/audio/kirby.wav";
-          break;
-        case "fox":
-          characterSound.src = "assets/audio/fox.wav";
-          break;
-        case "pikachu":
-          characterSound.src = "assets/audio/pikachu.wav";
-          break;
-        case "luigi":
-          characterSound.src = "assets/audio/luigi.wav";
-          break;
-        case "ness":
-          characterSound.src = "assets/audio/ness.wav";
-          break;
-        case "falcon":
-          characterSound.src = "assets/audio/falcon.wav";
-          break;
-        case "jigglypuff":
-          characterSound.src = "assets/audio/jigglypuff.wav";
-      }
-      characterSound.play();
+      switchSound(secondCard);
+  }
+
+  function switchSound(character) {
+    switch (character.dataset.framework) {
+      case "mario":
+        characterSound.src = "assets/audio/mario.wav";
+        break;
+      case "dK":
+        characterSound.src = "assets/audio/dK.wav";
+        break;
+      case "link":
+        characterSound.src = "assets/audio/link.wav";
+        break;
+      case "samus":
+        characterSound.src = "assets/audio/samus.wav";
+        break;
+      case "yoshi":
+        characterSound.src = "assets/audio/yoshi.wav";
+        break;
+      case "kirby":
+        characterSound.src = "assets/audio/kirby.wav";
+        break;
+      case "fox":
+        characterSound.src = "assets/audio/fox.wav";
+        break;
+      case "pikachu":
+        characterSound.src = "assets/audio/pikachu.wav";
+        break;
+      case "luigi":
+        characterSound.src = "assets/audio/luigi.wav";
+        break;
+      case "ness":
+        characterSound.src = "assets/audio/ness.wav";
+        break;
+      case "falcon":
+        characterSound.src = "assets/audio/falcon.wav";
+        break;
+      case "jigglypuff":
+        characterSound.src = "assets/audio/jigglypuff.wav";
     }
+    characterSound.play();
   }
 
   function displayModal() {
@@ -248,10 +219,21 @@ document.addEventListener("DOMContentLoaded", function() {
   }
 
   function toggleMusic() {
+    const themeMusic = document.querySelector(".theme-music");
+
     const muted = document.querySelector(".muted");
     const unmuted = document.querySelector(".unmuted");
     muted.classList.toggle("toggleIcon");
     unmuted.classList.toggle("toggleIcon");
+
+    if(muted.classList.contains("toggleIcon")) {
+      musicOn = true;
+      themeMusic.play();
+    }
+    else {
+      musicOn = false;
+      themeMusic.pause();
+    }
   }
 
 });
