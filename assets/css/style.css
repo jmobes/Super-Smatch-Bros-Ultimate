@@ -9,8 +9,9 @@
 html {
   font-size: 62.5%;
 }
+
 body {
-  background-color: rgb(206, 202, 202);
+  background-color: black;
 }
 
 .game-container {
@@ -51,7 +52,7 @@ body {
 
 .title .yellow-bg {
   background-color:rgb(253, 212, 11);
-  color: rgb(1,1,1);
+  color: rgb(0,0,0);
   clip-path: polygon(5% 0, 95% 0, 100% 50%, 95% 100%, 5% 100%, 0 50%);
   height: 8.8vh;
   width: 95%;
@@ -80,7 +81,6 @@ body {
   position: relative;
   border: 1px solid black;
   border-radius: 10px;
-  /* box-shadow: 5px 5px 20px; */
   background-color: rgb(230,245,153);
   backface-visibility: hidden;
   cursor: pointer;
@@ -274,4 +274,35 @@ body {
   background-image: linear-gradient(to right, yellow, orange);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+}
+
+audio {
+  width: 10%;
+  background-color: white;
+  z-index: 5;
+}
+
+.sound {
+  position: absolute;
+  top: 0;
+  left: 0;
+  clip-path: polygon(0 0, 100% 0, 80% 100%, 0 100%);
+  background-color: rgb(173, 0, 0);
+  width: 7%;
+  height: 7%;
+  text-align: center;
+}
+
+.muted, .unmuted {
+  cursor: pointer;
+  line-height: 130%;
+  vertical-align: middle;
+}
+
+.muted:active {
+  transform: scale(.97);
+}
+
+.toggleIcon {
+  display: none;
 }

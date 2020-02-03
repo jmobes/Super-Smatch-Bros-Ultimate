@@ -13,12 +13,18 @@ document.addEventListener("DOMContentLoaded", function() {
   const firstCardText = document.querySelector(".first-card-text");
   const secondCardText = document.querySelector(".second-card-text");
 
+  const themeMusic = document.querySelector(".theme-music");
+  const soundBtn = document.querySelector(".sound");
+  soundBtn.addEventListener("click", toggleMusic);
+
+  let characterSound = new Audio();
+
   const cards = document.querySelectorAll(".card");
   cards.forEach(card => {
     card.addEventListener("click", flipCard);
   });
 
-  shuffleCards();
+  // shuffleCards();
 
   function flipCard() {
 
@@ -37,6 +43,7 @@ document.addEventListener("DOMContentLoaded", function() {
       flipped = true;
       firstCard = this;
       getImages();
+      playSound();
 
       return;
     }
@@ -44,6 +51,7 @@ document.addEventListener("DOMContentLoaded", function() {
     flipped = false;
     secondCard = this;
     getImages();
+    playSound();
     checkMatch();
   }
 
@@ -62,7 +70,7 @@ document.addEventListener("DOMContentLoaded", function() {
       resetImages();
     },1000);
     if(match === 12) {
-      document.querySelector(".modal-container").style.display = "block";
+      displayModal();
     }
   }
 
@@ -84,36 +92,56 @@ document.addEventListener("DOMContentLoaded", function() {
   }
 
   function getImages() {
-    firstCardBigImage.src = "assets/images/" + firstCard.dataset.framework + "-card.png";
-    if (firstCard.dataset.framework === "jigglypuff" || firstCard.dataset.framework === "pikachu") {
-      firstCardLogo.src = "assets/images/pokemon-logo.png";
-    }
-    else if (firstCard.dataset.framework === "mario" || firstCard.dataset.framework === "luigi") {
-      firstCardLogo.src = "assets/images/mario-bros-logo.png";
-    }
-    else {
-      firstCardLogo.src = "assets/images/" + firstCard.dataset.framework + "-logo.png";
-    }
-    firstCardText.innerText = firstCard.dataset.framework;
-    firstCardText.style.textTransform = "capitalize";
 
-    if(secondCard === null) {
-      return;
-    }
-    else {
-      secondCardBigImage.src = "assets/images/" + secondCard.dataset.framework + "-card.png";
-      if (secondCard.dataset.framework === "jigglypuff" || secondCard.dataset.framework === "pikachu") {
-        secondCardLogo.src = "assets/images/pokemon-logo.png";
+    if(firstCardBigImage.src && flipped) {
+      firstCardBigImage.src = "assets/images/" + firstCard.dataset.framework + "-card.png";
+
+      if (firstCard.dataset.framework === "jigglypuff" || firstCard.dataset.framework === "pikachu") {
+        firstCardLogo.src = "assets/images/pokemon-logo.png";
       }
-      else if (secondCard.dataset.framework === "mario" || secondCard.dataset.framework === "luigi") {
-        secondCardLogo.src = "assets/images/mario-bros-logo.png";
+      else if (firstCard.dataset.framework === "mario" || firstCard.dataset.framework === "luigi") {
+        firstCardLogo.src = "assets/images/mario-bros-logo.png";
       }
       else {
-        secondCardLogo.src = "assets/images/" + secondCard.dataset.framework + "-logo.png";
+        firstCardLogo.src = "assets/images/" + firstCard.dataset.framework + "-logo.png";
       }
-      secondCardText.innerText = secondCard.dataset.framework;
-      secondCardText.style.textTransform = "capitalize";
+
+      if (firstCard.dataset.framework === "falcon") {
+        firstCardText.innerText = "C. Falcon";
+      }
+      else if (firstCard.dataset.framework === "dK") {
+        firstCardText.innerText = "Donkey Kong";
+      }
+      else {
+        firstCardText.innerText = firstCard.dataset.framework;
+      }
+
+      firstCardText.style.textTransform = "capitalize";
+
+      return;
     }
+
+    secondCardBigImage.src = "assets/images/" + secondCard.dataset.framework + "-card.png";
+
+    if (secondCard.dataset.framework === "jigglypuff" || secondCard.dataset.framework === "pikachu") {
+      secondCardLogo.src = "assets/images/pokemon-logo.png";
+    }
+    else if (secondCard.dataset.framework === "mario" || secondCard.dataset.framework === "luigi") {
+      secondCardLogo.src = "assets/images/mario-bros-logo.png";
+    }
+    else {
+      secondCardLogo.src = "assets/images/" + secondCard.dataset.framework + "-logo.png";
+    }
+    if (secondCard.dataset.framework === "falcon") {
+      secondCardText.innerText = "C. Falcon";
+    }
+    else if (secondCard.dataset.framework === "dK") {
+      secondCardText.innerText = "Donkey Kong";
+    }
+    else {
+      secondCardText.innerText = secondCard.dataset.framework;
+    }
+    secondCardText.style.textTransform = "capitalize";
   }
 
   function resetImages() {
@@ -130,6 +158,100 @@ document.addEventListener("DOMContentLoaded", function() {
       let randomPosition = Math.floor(Math.random()*24);
       card.style.order = randomPosition;
     })
+  }
+
+  function playSound() {
+    if(flipped) {
+      switch (firstCard.dataset.framework) {
+        case "mario":
+          characterSound.src = "assets/audio/mario.wav";
+          break;
+        case "dK":
+          characterSound.src = "assets/audio/dK.wav";
+          break;
+        case "link":
+          characterSound.src = "assets/audio/link.wav";
+          break;
+        case "samus":
+          characterSound.src = "assets/audio/samus.wav";
+          break;
+        case "yoshi":
+          characterSound.src = "assets/audio/yoshi.wav";
+          break;
+        case "kirby":
+          characterSound.src = "assets/audio/kirby.wav";
+          break;
+        case "fox":
+          characterSound.src = "assets/audio/fox.wav";
+          break;
+        case "pikachu":
+          characterSound.src = "assets/audio/pikachu.wav";
+          break;
+        case "luigi":
+          characterSound.src = "assets/audio/luigi.wav";
+          break;
+        case "ness":
+          characterSound.src = "assets/audio/ness.wav";
+          break;
+        case "falcon":
+          characterSound.src = "assets/audio/falcon.wav";
+          break;
+        case "jigglypuff":
+          characterSound.src = "assets/audio/jigglypuff.wav";
+      }
+      characterSound.play();
+    }
+    else {
+      switch (secondCard.dataset.framework) {
+        case "mario":
+          characterSound.src = "assets/audio/mario.wav";
+          break;
+        case "dK":
+          characterSound.src = "assets/audio/dK.wav";
+          break;
+        case "link":
+          characterSound.src = "assets/audio/link.wav";
+          break;
+        case "samus":
+          characterSound.src = "assets/audio/samus.wav";
+          break;
+        case "yoshi":
+          characterSound.src = "assets/audio/yoshi.wav";
+          break;
+        case "kirby":
+          characterSound.src = "assets/audio/kirby.wav";
+          break;
+        case "fox":
+          characterSound.src = "assets/audio/fox.wav";
+          break;
+        case "pikachu":
+          characterSound.src = "assets/audio/pikachu.wav";
+          break;
+        case "luigi":
+          characterSound.src = "assets/audio/luigi.wav";
+          break;
+        case "ness":
+          characterSound.src = "assets/audio/ness.wav";
+          break;
+        case "falcon":
+          characterSound.src = "assets/audio/falcon.wav";
+          break;
+        case "jigglypuff":
+          characterSound.src = "assets/audio/jigglypuff.wav";
+      }
+      characterSound.play();
+    }
+  }
+
+  function displayModal() {
+    document.querySelector(".modal-container").style.display = "block";
+  }
+
+  function toggleMusic() {
+    const muted = document.querySelector(".muted");
+    const unmuted = document.querySelector(".unmuted");
+    muted.classList.toggle("toggleIcon");
+    unmuted.classList.toggle("toggleIcon");
   }
 
 });
