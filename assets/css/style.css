@@ -276,7 +276,7 @@ body {
   -webkit-text-fill-color: transparent;
 }
 
-audio {
+.theme-music {
   width: 10%;
   background-color: white;
   z-index: 5;
@@ -299,7 +299,7 @@ audio {
   vertical-align: middle;
 }
 
-.muted:active {
+.muted:active, .unmuted:active {
   transform: scale(.97);
 }
 
