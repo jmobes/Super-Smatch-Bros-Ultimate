@@ -13,9 +13,9 @@ document.addEventListener("DOMContentLoaded", function() {
   const firstCardText = document.querySelector(".first-card-text");
   const secondCardText = document.querySelector(".second-card-text");
 
-  let music = document.querySelector(".theme-music");
-  console.log(music);
-  music.play();
+  const themeMusic = document.querySelector(".theme-music");
+  const soundBtn = document.querySelector(".sound");
+  soundBtn.addEventListener("click", toggleMusic);
 
   let characterSound = new Audio();
 
@@ -70,7 +70,7 @@ document.addEventListener("DOMContentLoaded", function() {
       resetImages();
     },1000);
     if(match === 12) {
-      document.querySelector(".modal-container").style.display = "block";
+      displayModal();
     }
   }
 
@@ -241,6 +241,17 @@ document.addEventListener("DOMContentLoaded", function() {
       }
       characterSound.play();
     }
+  }
+
+  function displayModal() {
+    document.querySelector(".modal-container").style.display = "block";
+  }
+
+  function toggleMusic() {
+    const muted = document.querySelector(".muted");
+    const unmuted = document.querySelector(".unmuted");
+    muted.classList.toggle("toggleIcon");
+    unmuted.classList.toggle("toggleIcon");
   }
 
 });
