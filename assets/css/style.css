@@ -269,14 +269,14 @@ body {
   position: absolute;
   left: 50%;
   top: 50%;
-  transform: translate(-50%, -50%) skewY(-6deg);
+  transform: translate(-50%, -30%) skewY(-5deg);
   font-size: 9rem;
   background-image: linear-gradient(to right, yellow, orange);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
-audio {
+.theme-music {
   width: 10%;
   background-color: white;
   z-index: 5;
@@ -299,7 +299,7 @@ audio {
   vertical-align: middle;
 }
 
-.muted:active {
+.muted:active, .unmuted:active {
   transform: scale(.97);
 }
 
