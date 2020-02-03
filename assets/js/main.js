@@ -18,7 +18,7 @@ document.addEventListener("DOMContentLoaded", function() {
     card.addEventListener("click", flipCard);
   });
 
-  shuffleCards();
+  // shuffleCards();
 
   function flipCard() {
 
@@ -94,7 +94,16 @@ document.addEventListener("DOMContentLoaded", function() {
     else {
       firstCardLogo.src = "assets/images/" + firstCard.dataset.framework + "-logo.png";
     }
-    firstCardText.innerText = firstCard.dataset.framework;
+    if (firstCard.dataset.framework === "falcon") {
+      firstCardText.innerText = "C. Falcon";
+    }
+    else if (firstCard.dataset.framework === "dK") {
+      firstCardText.innerText = "Donkey Kong";
+    }
+    else {
+      firstCardText.innerText = firstCard.dataset.framework;
+    }
+
     firstCardText.style.textTransform = "capitalize";
 
     if(secondCard === null) {
@@ -111,7 +120,15 @@ document.addEventListener("DOMContentLoaded", function() {
       else {
         secondCardLogo.src = "assets/images/" + secondCard.dataset.framework + "-logo.png";
       }
-      secondCardText.innerText = secondCard.dataset.framework;
+      if (secondCard.dataset.framework === "falcon") {
+        secondCardText.innerText = "C. Falcon";
+      }
+      else if (secondCard.dataset.framework === "dK") {
+        secondCardText.innerText = "Donkey Kong";
+      }
+      else {
+        secondCardText.innerText = secondCard.dataset.framework;
+      }
       secondCardText.style.textTransform = "capitalize";
     }
   }
