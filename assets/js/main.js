@@ -25,7 +25,7 @@ document.addEventListener("DOMContentLoaded", function() {
     card.addEventListener("click", flipCard);
   });
 
-  // shuffleCards();
+  shuffleCards();
 
   function flipCard() {
 
