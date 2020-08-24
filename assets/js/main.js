@@ -43,6 +43,7 @@ document.addEventListener("DOMContentLoaded", function() {
     if(!flipped) {
       flipped = true;
       firstCard = this;
+      console.log(this);
       getImages();
       playSound();
       return;
@@ -50,6 +51,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
     flipped = false;
     secondCard = this;
+    console.log(this);
     getImages();
     playSound();
     checkMatch();
