@@ -13,6 +13,7 @@ html {
 
 body {
   height: 100%;
+  font-family: 'Roboto', sans-serif;
 }
 
 /* Game Window */
@@ -27,6 +28,7 @@ body {
 .header {
   display: flex;
   position: relative;
+  align-items: center;
 }
 .sound {
   background-color: rgb(198,0,0);
@@ -42,32 +44,34 @@ body {
 }
 .header__gradient {
   position: absolute;
-  height: 50%;
+  height: 60%;
   width: 100%;
-  background-color: yellow;
+  background-image: linear-gradient(to right, rgb(117,228,227), rgb(244,244,48));
   top: 0;
   left: 0;
 }
-
-.title .black-bg {
-  background-color: black;
-  clip-path: polygon(5% 0, 95% 0, 100% 50%, 95% 100%, 5% 100%, 0 50%);
-  height: 10vh;
+.header__gradient::after {
+  content: "";
+  width: 100%;
+  height: 100%;
+  display: block;
+  background: linear-gradient(359deg, rgba(157,0,48,1) 50%, rgba(157,0,48,0) 51%);
 }
-
-.title .yellow-bg {
-  background-color:rgb(253, 212, 11);
-  color: rgb(0,0,0);
+.header__title {
+  background-color: #000;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
   clip-path: polygon(5% 0, 95% 0, 100% 50%, 95% 100%, 5% 100%, 0 50%);
-  height: 8.8vh;
-  width: 95%;
-  transform: translateX(.9rem) translateY(.3rem);
+  width: 30%;
+  padding: .5rem 1rem;
 }
-
-.title .title-text {
-  text-align: center;
-  line-height: 8.8vh;
+.header__title--text {
+  background-color: rgb(253, 212, 11);
+  clip-path: polygon(5% 0, 95% 0, 100% 50%, 95% 100%, 5% 100%, 0 50%);
   font-size: 3rem;
+  text-align: center;
 }
 
 /* Cards */
@@ -95,11 +99,6 @@ body {
   border-radius: 10px;
 }
 
-/* .card:active {
-  transform: scale(.98);
-  transition: transform .3s;
-} */
-
 .card .back, .card .front {
   background-position: center;
   backface-visibility: hidden;
@@ -114,7 +113,6 @@ body {
   transform: translate(-50%, -50%);
   border-radius: 10px;
   background-image: linear-gradient(36deg, rgba(233,202,55,1) 0%,rgba(251,240,184,1) 60%);
-
 }
 
 .card .front {
