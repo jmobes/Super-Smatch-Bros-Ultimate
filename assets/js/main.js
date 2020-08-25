@@ -1,11 +1,17 @@
 document.addEventListener("DOMContentLoaded", function() {
 
-  const firstCardBigImage = document.querySelector(".first-pick-character");
-  const secondCardBigImage = document.querySelector(".second-pick-character");
-  const firstCardLogo = document.querySelector(".first-pick-logo");
-  const secondCardLogo = document.querySelector(".second-pick-logo");
-  const firstCardText = document.querySelector(".first-card-text");
-  const secondCardText = document.querySelector(".second-card-text");
+  // const firstCardBigImage = document.querySelector(".first-pick-character");
+  // const secondCardBigImage = document.querySelector(".second-pick-character");
+  // const firstCardLogo = document.querySelector(".first-pick-logo");
+  // const secondCardLogo = document.querySelector(".second-pick-logo");
+  // const firstCardText = document.querySelector(".first-card-text");
+  // const secondCardText = document.querySelector(".second-card-text");
+  const firstCardBigImage = document.querySelector(".select__image--1");
+  const secondCardBigImage = document.querySelector(".select__image--2");
+  const firstCardLogo = document.querySelector(".select__info__logo--1");
+  const secondCardLogo = document.querySelector(".select__info__logo--2");
+  const firstCardText = document.querySelector(".select__info__characterName--1");
+  const secondCardText = document.querySelector(".select__info__characterName--2");
   const winCondition = 12;
 
   let firstCard = null;
@@ -20,12 +26,13 @@ document.addEventListener("DOMContentLoaded", function() {
   const soundBtn = document.querySelector(".sound");
   soundBtn.addEventListener("click", toggleMusic);
 
-  const cards = document.querySelectorAll(".card");
+  const cards = document.querySelectorAll(".card__space");
   cards.forEach(card => {
     card.addEventListener("click", flipCard);
   });
 
-  shuffleCards();
+  // shuffleCards();
+  // displayModal();
 
   function flipCard() {
 
@@ -38,7 +45,7 @@ document.addEventListener("DOMContentLoaded", function() {
       return;
     }
 
-    this.classList.toggle("flip");
+    this.firstElementChild.classList.toggle("flip");
 
     if(!flipped) {
       flipped = true;
@@ -81,8 +88,8 @@ document.addEventListener("DOMContentLoaded", function() {
   function unflip() {
     locked = true;
     setTimeout(() => {
-      firstCard.classList.toggle("flip");
-      secondCard.classList.toggle("flip");
+      firstCard.firstElementChild.classList.toggle("flip");
+      secondCard.firstElementChild.classList.toggle("flip");
       resetBoard();
       resetImages();
     }, 1500);
@@ -209,7 +216,7 @@ document.addEventListener("DOMContentLoaded", function() {
   }
 
   function displayModal() {
-    document.querySelector(".modal-container").style.display = "block";
+    document.querySelector(".modal__container").style.display = "block";
 
     if(musicOn) {
       characterSound.src = "assets/audio/congrats.wav";
