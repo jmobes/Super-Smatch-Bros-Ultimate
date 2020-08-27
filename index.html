@@ -7,8 +7,7 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.0/css/all.css"
       integrity="sha384-REHJTs1r2ErKBuJB0fCK99gCYsVjwxHrSU0N7I1zl9vZbggVJXRMsv/sLlOAGb4M" crossorigin="anonymous">
     <link rel="stylesheet" href="assets/css/style.css">
-    <link href="https://fonts.googleapis.com/css?family=Roboto:900&display=swap" rel="stylesheet">
-    <script src="assets/js/main.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;900&display=swap" rel="stylesheet">    <script src="assets/js/main.js"></script>
     <title>Super Smatch Bros Ultimate</title>
   </head>
   <body>
@@ -16,167 +15,198 @@
     <div class="game-container">
 
       <header class="header">
-        <div class="header-container">
-          <div class="top-left-triangle">
-          </div>
-          <div class="bottom-right-triangle">
-          </div>
+        <div class="sound">
+          <i class="muted fas fa-volume-mute fa-2x"></i>
+          <i class="unmuted toggleIcon fas fa-volume-up fa-2x"></i>
+        </div>
+        <div class="header__gradient"></div>
+        <div class="header__title">
+          <h1 class="header__title--text">
+            Super Smatch Bros
+          </h1>
+        </div>
       </header>
 
-      <section class="title">
-        <div class="black-bg">
-          <div class="yellow-bg">
-            <div class="title-text">
-              Super Smatch Bros
-            </div>
+      <main class="card__container">
+        <div class="card__space" data-framework="mario">
+          <div class="card">
+            <img class="back" src="assets/images/smash-icon.png" alt="super smash bros icon">
+            <img src="assets/images/mario-profile.png" alt="mario portrait" class="front">
           </div>
         </div>
-      </section>
-
-      <main class="card-container">
-        <div class="card" data-framework="mario">
-          <img class="back" src="assets/images/smash-icon.png" alt="super smash bros icon">
-          <img src="assets/images/mario-profile.png" alt="mario portrait" class="front">
+        <div class="card__space" data-framework="mario">
+          <div class="card">
+            <img class="back" src="assets/images/smash-icon.png" alt="super smash bros icon">
+            <img src="assets/images/mario-profile.png" alt="mario portrait" class="front">
+          </div>
         </div>
-        <div class="card" data-framework="mario">
-          <img class="back" src="assets/images/smash-icon.png" alt="super smash bros icon">
-          <img src="assets/images/mario-profile.png" alt="mario portrait" class="front">
+        <div class="card__space" data-framework="dK">
+          <div class="card">
+            <img class="back" src="assets/images/smash-icon.png" alt="super smash bros icon">
+            <img src="assets/images/dk-profile.png" alt="donkey kong portrait" class="front">
+          </div>
         </div>
-        <div class="card" data-framework="dK">
-          <img class="back" src="assets/images/smash-icon.png" alt="super smash bros icon">
-          <img src="assets/images/dk-profile.png" alt="donkey kong portrait" class="front">
+        <div class="card__space" data-framework="dK">
+          <div class="card">
+            <img class="back" src="assets/images/smash-icon.png" alt="super smash bros icon">
+            <img src="assets/images/dk-profile.png" alt="donkey kong portrait" class="front">
+          </div>
         </div>
-        <div class="card" data-framework="dK">
-          <img class="back" src="assets/images/smash-icon.png" alt="super smash bros icon">
-          <img src="assets/images/dk-profile.png" alt="donkey kong portrait" class="front">
+        <div class="card__space" data-framework="link">
+          <div class="card">
+            <img class="back" src="assets/images/smash-icon.png" alt="super smash bros icon">
+            <img src="assets/images/link-profile.png" alt="link portrait" class="front">
+          </div>
         </div>
-        <div class="card" data-framework="link">
-          <img class="back" src="assets/images/smash-icon.png" alt="super smash bros icon">
-          <img src="assets/images/link-profile.png" alt="link portrait" class="front">
+        <div class="card__space" data-framework="link">
+          <div class="card">
+            <img class="back" src="assets/images/smash-icon.png" alt="super smash bros icon">
+            <img src="assets/images/link-profile.png" alt="link portrait" class="front">
+          </div>
         </div>
-        <div class="card" data-framework="link">
-          <img class="back" src="assets/images/smash-icon.png" alt="super smash bros icon">
-          <img src="assets/images/link-profile.png" alt="link portrait" class="front">
+        <div class="card__space" data-framework="samus">
+          <div class="card">
+            <img class="back" src="assets/images/smash-icon.png" alt="super smash bros icon">
+            <img src="assets/images/samus-profile.png" alt="samus portrait" class="front">
+          </div>
         </div>
-        <div class="card" data-framework="samus">
-          <img class="back" src="assets/images/smash-icon.png" alt="super smash bros icon">
-          <img src="assets/images/samus-profile.png" alt="samus portrait" class="front">
+        <div class="card__space" data-framework="samus">
+          <div class="card">
+            <img class="back" src="assets/images/smash-icon.png" alt="super smash bros icon">
+            <img src="assets/images/samus-profile.png" alt="samus portrait" class="front">
+          </div>
         </div>
-        <div class="card" data-framework="samus">
-          <img class="back" src="assets/images/smash-icon.png" alt="super smash bros icon">
-          <img src="assets/images/samus-profile.png" alt="samus portrait" class="front">
+        <div class="card__space" data-framework="yoshi">
+          <div class="card">
+            <img class="back" src="assets/images/smash-icon.png" alt="super smash bros icon">
+            <img src="assets/images/yoshi-profile.png" alt="yoshi portrait" class="front">
+          </div>
         </div>
-        <div class="card" data-framework="yoshi">
-          <img class="back" src="assets/images/smash-icon.png" alt="super smash bros icon">
-          <img src="assets/images/yoshi-profile.png" alt="yoshi portrait" class="front">
+        <div class="card__space" data-framework="yoshi">
+          <div class="card">
+            <img class="back" src="assets/images/smash-icon.png" alt="super smash bros icon">
+            <img src="assets/images/yoshi-profile.png" alt="yoshi portrait" class="front">
+          </div>
         </div>
-        <div class="card" data-framework="yoshi">
-          <img class="back" src="assets/images/smash-icon.png" alt="super smash bros icon">
-          <img src="assets/images/yoshi-profile.png" alt="yoshi portrait" class="front">
+        <div class="card__space" data-framework="kirby">
+          <div class="card">
+            <img class="back" src="assets/images/smash-icon.png" alt="super smash bros icon">
+            <img src="assets/images/kirby-profile.png" alt="kirby portrait" class="front">
+          </div>
         </div>
-        <div class="card" data-framework="kirby">
-          <img class="back" src="assets/images/smash-icon.png" alt="super smash bros icon">
-          <img src="assets/images/kirby-profile.png" alt="kirby portrait" class="front">
+        <div class="card__space" data-framework="kirby">
+          <div class="card">
+            <img class="back" src="assets/images/smash-icon.png" alt="super smash bros icon">
+            <img src="assets/images/kirby-profile.png" alt="kirby portrait" class="front">
+          </div>
         </div>
-        <div class="card" data-framework="kirby">
-          <img class="back" src="assets/images/smash-icon.png" alt="super smash bros icon">
-          <img src="assets/images/kirby-profile.png" alt="kirby portrait" class="front">
+        <div class="card__space" data-framework="fox">
+          <div class="card">
+            <img class="back" src="assets/images/smash-icon.png" alt="super smash bros icon">
+            <img src="assets/images/fox-profile.png" alt="fox portrait" class="front">
+          </div>
         </div>
-        <div class="card" data-framework="fox">
-          <img class="back" src="assets/images/smash-icon.png" alt="super smash bros icon">
-          <img src="assets/images/fox-profile.png" alt="fox portrait" class="front">
+        <div class="card__space" data-framework="fox">
+          <div class="card">
+            <img class="back" src="assets/images/smash-icon.png" alt="super smash bros icon">
+            <img src="assets/images/fox-profile.png" alt="fox portrait" class="front">
+          </div>
         </div>
-        <div class="card" data-framework="fox">
-          <img class="back" src="assets/images/smash-icon.png" alt="super smash bros icon">
-          <img src="assets/images/fox-profile.png" alt="fox portrait" class="front">
+        <div class="card__space" data-framework="pikachu">
+          <div class="card">
+            <img class="back" src="assets/images/smash-icon.png" alt="super smash bros icon">
+            <img src="assets/images/pikachu-profile.png" alt="pikachu portrait" class="front">
+          </div>
         </div>
-        <div class="card" data-framework="pikachu">
-          <img class="back" src="assets/images/smash-icon.png" alt="super smash bros icon">
-          <img src="assets/images/pikachu-profile.png" alt="pikachu portrait" class="front">
+        <div class="card__space" data-framework="pikachu">
+          <div class="card">
+            <img class="back" src="assets/images/smash-icon.png" alt="super smash bros icon">
+            <img src="assets/images/pikachu-profile.png" alt="pikachu portrait" class="front">
+          </div>
         </div>
-        <div class="card" data-framework="pikachu">
-          <img class="back" src="assets/images/smash-icon.png" alt="super smash bros icon">
-          <img src="assets/images/pikachu-profile.png" alt="pikachu portrait" class="front">
+        <div class="card__space" data-framework="luigi">
+          <div class="card">
+            <img class="back" src="assets/images/smash-icon.png" alt="super smash bros icon">
+            <img src="assets/images/luigi-profile.png" alt="luigi portrait" class="front">
+          </div>
         </div>
-        <div class="card" data-framework="luigi">
-          <img class="back" src="assets/images/smash-icon.png" alt="super smash bros icon">
-          <img src="assets/images/luigi-profile.png" alt="luigi portrait" class="front">
+        <div class="card__space" data-framework="luigi">
+          <div class="card">
+            <img class="back" src="assets/images/smash-icon.png" alt="super smash bros icon">
+            <img src="assets/images/luigi-profile.png" alt="luigi portrait" class="front">
+          </div>
         </div>
-        <div class="card" data-framework="luigi">
-          <img class="back" src="assets/images/smash-icon.png" alt="super smash bros icon">
-          <img src="assets/images/luigi-profile.png" alt="luigi portrait" class="front">
+        <div class="card__space" data-framework="ness">
+          <div class="card">
+            <img class="back" src="assets/images/smash-icon.png" alt="super smash bros icon">
+            <img src="assets/images/ness-profile.png" alt="ness portrait" class="front">
+          </div>
         </div>
-        <div class="card" data-framework="ness">
-          <img class="back" src="assets/images/smash-icon.png" alt="super smash bros icon">
-          <img src="assets/images/ness-profile.png" alt="ness portrait" class="front">
+        <div class="card__space" data-framework="ness">
+          <div class="card">
+            <img class="back" src="assets/images/smash-icon.png" alt="super smash bros icon">
+            <img src="assets/images/ness-profile.png" alt="ness portrait" class="front">
+          </div>
         </div>
-        <div class="card" data-framework="ness">
-          <img class="back" src="assets/images/smash-icon.png" alt="super smash bros icon">
-          <img src="assets/images/ness-profile.png" alt="ness portrait" class="front">
+        <div class="card__space" data-framework="falcon">
+          <div class="card">
+            <img class="back" src="assets/images/smash-icon.png" alt="super smash bros icon">
+            <img src="assets/images/falcon-profile.png" alt="captain falcon portrait" class="front">
+          </div>
         </div>
-        <div class="card" data-framework="falcon">
-          <img class="back" src="assets/images/smash-icon.png" alt="super smash bros icon">
-          <img src="assets/images/falcon-profile.png" alt="captain falcon portrait" class="front">
+        <div class="card__space" data-framework="falcon">
+          <div class="card">
+            <img class="back" src="assets/images/smash-icon.png" alt="super smash bros icon">
+            <img src="assets/images/falcon-profile.png" alt="captain falcon portrait" class="front">
+          </div>
         </div>
-        <div class="card" data-framework="falcon">
-          <img class="back" src="assets/images/smash-icon.png" alt="super smash bros icon">
-          <img src="assets/images/falcon-profile.png" alt="captain falcon portrait" class="front">
+        <div class="card__space" data-framework="jigglypuff">
+          <div class="card">
+            <img class="back" src="assets/images/smash-icon.png" alt="super smash bros icon">
+            <img src="assets/images/jigglypuff-profile.png" alt="jigglypuff portrait" class="front">
+          </div>
         </div>
-        <div class="card" data-framework="jigglypuff">
-          <img class="back" src="assets/images/smash-icon.png" alt="super smash bros icon">
-          <img src="assets/images/jigglypuff-profile.png" alt="jigglypuff portrait" class="front">
-        </div>
-        <div class="card" data-framework="jigglypuff">
-          <img class="back" src="assets/images/smash-icon.png" alt="super smash bros icon">
-          <img src="assets/images/jigglypuff-profile.png" alt="jigglypuff portrait" class="front">
+        <div class="card__space" data-framework="jigglypuff">
+          <div class="card">
+            <img class="back" src="assets/images/smash-icon.png" alt="super smash bros icon">
+            <img src="assets/images/jigglypuff-profile.png" alt="jigglypuff portrait" class="front">
+          </div>
         </div>
       </main>
 
-      <footer class="footer-container">
-        <div class="footer-black-bg">
-          <div class="footer-card first">
-            <div class="img-container portrait-one">
-              <img class="character-portrait first-pick-character" src="assets/images/random.png" alt="smash bros character large">
-            </div>
-            <div class="character-info-container">
-              <img class="character-logo first-pick-logo" src="assets/images/smash-icon.png" alt="character series logo">
-              <div class="character-text-container">
-                <p class="character-text first-card-text">Fighter</p>
-              </div>
-              <div class="card-text-container red">
-                <p class="card-text">Card 1</p>
-              </div>
-            </div>
+      <footer class="select__container">
+        <div class="select__box">
+          <div class="select__image__container select__image__container--1">
+            <img class="select__image select__image--1" src="/assets/images/random.png" alt="Random picture">
+          </div>
+          <div class="select__info">
+            <div class="select__info__background select__info__background--1"></div>
+            <img class="select__info__logo select__info__logo--1" src="/assets/images/smash-icon.png" alt="Character logo">
+            <h2 class="select__info__characterName select__info__characterName--1">Fighter</h2>
+            <h3 class="select__info__cardText select__info__cardText--1">Selection 1</h3>
           </div>
         </div>
-        <div class="footer-black-bg">
-          <div class="footer-card second">
-            <div class="img-container portrait-two">
-              <img class="character-portrait second-pick-character" src="assets/images/random.png" alt="character from super smash bros">
-            </div>
-            <div class="character-info-container">
-              <img class="character-logo second-pick-logo" src="assets/images/smash-icon.png" alt="character series logo">
-              <div class="character-text-container">
-                <p class="character-text second-card-text">Fighter</p>
-              </div>
-              <div class="card-text-container blue">
-                <p class="card-text">Card 2</p>
-              </div>
-            </div>
+        <div class="select__box">
+          <div class="select__image__container select__image__container--2">
+            <img class="select__image select__image--2" src="/assets/images/random.png" alt="Random picture">
+          </div>
+          <div class="select__info">
+            <div class="select__info__background select__info__background--2"></div>
+            <img class="select__info__logo select__info__logo--2" src="/assets/images/smash-icon.png" alt="Character logo">
+            <h2 class="select__info__characterName select__info__characterName--2">Fighter</h2>
+            <h3 class="select__info__cardText select__info__cardText--2">Selection 2</h3>
           </div>
         </div>
       </footer>
 
-      <div class="modal-container">
-        <div class="modal-bg-1">
-
-        </div>
-        <div class="modal-bg-2">
-          <p class="win">YOU WIN!</p>
+      <div class="modal__container">
+        <div class="modal__bg--1">
+          <div class="modal__bg--2"></div>
+          <div class="modal__bg--3">
+            <h2 class="modal__text">YOU WIN!</h2>
+          </div>
         </div>
       </div>
-
-      <div class="sound"><i class="muted fas fa-volume-mute fa-2x"></i><i class="unmuted toggleIcon fas fa-volume-up fa-2x"></i></div>
 
     </div>
 
