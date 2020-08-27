@@ -1,11 +1,5 @@
 document.addEventListener("DOMContentLoaded", function() {
 
-  // const firstCardBigImage = document.querySelector(".first-pick-character");
-  // const secondCardBigImage = document.querySelector(".second-pick-character");
-  // const firstCardLogo = document.querySelector(".first-pick-logo");
-  // const secondCardLogo = document.querySelector(".second-pick-logo");
-  // const firstCardText = document.querySelector(".first-card-text");
-  // const secondCardText = document.querySelector(".second-card-text");
   const firstCardBigImage = document.querySelector(".select__image--1");
   const secondCardBigImage = document.querySelector(".select__image--2");
   const firstCardLogo = document.querySelector(".select__info__logo--1");
@@ -32,7 +26,7 @@ document.addEventListener("DOMContentLoaded", function() {
   });
 
   // shuffleCards();
-  // displayModal();
+  displayModal();
 
   function flipCard() {
 

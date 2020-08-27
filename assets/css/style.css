@@ -82,7 +82,7 @@ body {
 }
 
 /* Cards */
-.card-container {
+.card__container {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
@@ -96,6 +96,8 @@ body {
   height: 12rem;
   perspective: 1000px;
   cursor: pointer;
+    margin-right: .5rem;
+
 }
 .card {
   height: 100%;
@@ -109,7 +111,7 @@ body {
   position: absolute;
   backface-visibility: hidden;
   background-image: linear-gradient(36deg, rgba(233,202,55,1) 0%,rgba(251,240,184,1) 60%);
-  border: 3px solid #000;
+  /* border: 3px solid #000; */
 }
 .card .front {
   transform: rotateY(180deg);
@@ -210,6 +212,53 @@ body {
 
 /* Modal */
 .modal__container {
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,.7);
+  position: absolute;
+}
+.modal__bg--1 {
+  width: 100%;
+  height: 40vh;
+  background-color: #fff;
+  position: absolute;
+  top: 10%;
+  left: 0;
+  clip-path: polygon(0 50%, 100% 10%, 100% 100%, 0 100%);
+}
+.modal__bg--2 {
+  width: 100%;
+  height: 70%;
+  position: absolute;
+  top: 20%;
+  clip-path: polygon(0 50%, 100% 10%, 100% 100%, 0 100%);
+  background-image: linear-gradient(to right, rgb(233,0,0), rgb(235,200,5));
+}
+.modal__bg--3 {
+  width: 80%;
+  height: 70%;
+  background-color: black;
+  position: absolute;
+  top: 55%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  clip-path: polygon(7% 40%, 100% 5%, 95% 90%, 0 100%);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.modal__text {
+  margin-top: 3rem;
+  text-align: center;
+  font-size: 8rem;
+  letter-spacing: 1.5rem;
+  transform: skewY(-3deg);
+  background-image: linear-gradient(to right, yellow, orange);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+/* .modal__container {
   position: absolute;
   top: 5%;
   left: 0;
@@ -253,34 +302,4 @@ body {
   background-image: linear-gradient(to right, yellow, orange);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-}
-
-/* Audio */
-.theme-music {
-  width: 10%;
-  background-color: white;
-  z-index: 5;
-}
-
-/* .sound {
-  position: absolute;
-  top: 0;
-  left: 0;
-  clip-path: polygon(0 0, 100% 0, 80% 100%, 0 100%);
-  transform: skew(-25deg);
-  background-color: rgb(173, 0, 0);
-  width: 7%;
-  height: 7%;
-  text-align: center;
-}
-
-.muted, .unmuted {
-  cursor: pointer;
-  line-height: 130%;
-  vertical-align: middle;
-}
-
-.muted:active, .unmuted:active {
-  transform: scale(.97);
-}
-*/
+} */
